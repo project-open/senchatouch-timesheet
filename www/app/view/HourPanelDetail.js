@@ -7,6 +7,11 @@
 Ext.define('PO.view.HourPanelDetail', {
     extend: 'Ext.form.Panel',
     xtype: 'hourPanelDetail',
+
+    requires: [
+	'PO.store.HourOneProjectStore'
+    ],
+
     config: {
         title: 'Hour Detail',
         layout: 'vbox',
@@ -23,11 +28,19 @@ Ext.define('PO.view.HourPanelDetail', {
 			xtype: 'hiddenfield',
 			name: 'id'
 		    }, {
+			xtype: 'selectfield',
+			name: 'project_id',
+			label: 'Project',
+			store: 'HourOneProjectStore'
+		    }, {
 			xtype: 'hiddenfield',
 			name: 'object_id',
 			label: 'Object ID',
 			value: 0		// Magic value: 0 is the ID of the "guest" object
 		    }
+
+
+
 		]
             }
         ]

@@ -26,17 +26,27 @@ Ext.define('PO.model.Project', {
 
 	    'level',			// 0 for a main project, 1 for a sub-project etc.
 
-	    {   name: 'project_name_indented',
+//	    ------------		// Denormalized fields from suitable queries
+	    'project_status',		// denormalized project_status_id (English), may not be set depending on query
+	    'project_type',		// denormalized project_type_id (English), may not be set depending on query
+	    'company_name',		// denormalized company_id
+	    'project_lead_name',	// Project manager
+
+//	    ------------		// Special fields only used by certain quieres. ToDo: Different model?
+	    'hours_total',		// may not be set depending on query
+	    'hours_for_user',		// may not be set depending on query
+	    'hours_for_user_date',	// may not be set depending on query
+
+	    {   name: 'indent',		// A &nbsp; sequence representing the project indentation
                 convert: function(value, record) {
-                    var project_name = record.get('project_name');
                     var level = record.get('level');
-		    
+		    var result = '';
 		    while (level > 0) {
-			project_name = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + project_name;
+			result = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result;
 			level = level - 1;
 		    }
 
-                    return project_name;
+                    return result;
                 }
             }
 	],

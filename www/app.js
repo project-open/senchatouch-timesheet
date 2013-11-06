@@ -13,6 +13,7 @@ Ext.application({
 	'HourOneDayStore',			// List of hours per project, day or user (depending on use)
 	'HourOneProjectStore',			// List of hours per project, day or user (depending on use)
 	'ProjectMainStore',			// List of main projects projects
+	'ProjectTaskStore',			// List of main projects projects
 	'ProjectTimesheetStore'			// List of projects whith hierarchical indent.
 						// Includes only projects with permissions for the current user to log hours
     ],

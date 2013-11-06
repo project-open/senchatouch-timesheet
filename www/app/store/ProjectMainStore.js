@@ -6,32 +6,37 @@ Ext.define('PO.store.ProjectMainStore', {
 	autoLoad: true,
 	pageSize: 10000,
 	
+	sorters: [
+	    {
+		property: 'company_name',
+		direction: 'ASC'
+	    }, {
+		property: 'project_name',
+		direction: 'ASC'
+	    }
+	],
+
 	grouper: {
 	    groupFn: function(record) { 
-		var fn = record.get('project_name');
-		if (fn == null) { fn = 'a'; }
-		return fn.toLowerCase()[0]; 
+//		return record.get('project_name').substring(0,1);
+		return record.get('company_name');
 	    }
 	},
-	
-	sorters: [{
-	    property: 'project_name',
-	    direction: 'ASC'
-	}],
-	
+
+
 	proxy: {
 	    type: 'rest',
-            url: '/intranet-rest/im_project',
-            appendId: true,
+            url: '/intranet-reporting/view',
             extraParams: {
                 format: 'json',
-		query: 'parent_id is null and project_status_id in (76)'
+		report_code: 'rest_main_projects_with_hours',
+		date: '2000-01-01'
             },
-            reader: { 
+            reader: {
 		type: 'json', 
 		rootProperty: 'data' 
 	    }
-        }
+        }	
 	
     }
 });

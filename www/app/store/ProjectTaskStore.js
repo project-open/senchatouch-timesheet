@@ -7,24 +7,25 @@ Ext.define('PO.store.ProjectTaskStore', {
 	pageSize: 10000,
 	
 	sorters: [{
-	    property: 'project_name',
+	    property: 'tree_sortkey',
 	    direction: 'ASC'
 	}],
-	
+
 	proxy: {
 	    type: 'rest',
-            url: '/intranet-rest/im_project',
+            url: '/intranet-reporting/view',
             appendId: true,
             extraParams: {
                 format: 'json',
-		query: 'substring(tree_sortkey for 32) is null'
+		report_code: 'rest_main_project_tasks_with_hours',
+		main_project_id: 0,
+		date: '2000-01-01'
             },
-            reader: { 
+            reader: {
 		type: 'json', 
 		rootProperty: 'data' 
 	    }
-        }
-	
+        }	
     }
 });
 

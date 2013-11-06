@@ -4,10 +4,8 @@
  * Author: Frank Bergmann (frank.bergmann@project-open.com)
  * License: http://www.project-open.org/en/license
  *
- * Stores the hours logged by the current user on a 
- * specific project.
- * The store is designed to be scripted and filtered
- * by a controller.
+ * Stores the hours logged by the current user on a specific task or project.
+ * The store is designed to be scripted and filtered by a controller.
  * 
 */
 Ext.define('PO.store.HourOneProjectStore', {

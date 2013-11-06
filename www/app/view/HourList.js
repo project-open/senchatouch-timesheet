@@ -2,7 +2,7 @@ Ext.define('PO.view.HourList', {
     extend: 'Ext.List',
     xtype: 'hourList',
     requires: ['PO.store.HourOneProjectStore'],
-    
+
     config: {
 	title: 'Hour List',
 	iconCls: 'star',

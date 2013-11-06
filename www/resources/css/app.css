@@ -38,11 +38,11 @@
 }
 
 .myButton {
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 0px;
+	margin-right: 5px;
 	float: left;
 }
 
 .myContent {
-	margin-bottom: 5px;
+	margin-bottom: 0px;
 }
