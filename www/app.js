@@ -41,9 +41,9 @@ Ext.application({
 	    fullscreen: true,
 	    tabBarPosition: 'bottom',
 	    items: [
-		// The application consists of two pages only:
-		{xtype: 'projectMainListNavigationView'},
+		// The application consists of two three only:
 		{xtype: 'splashPage'}, 
+		{xtype: 'projectMainListNavigationView'},
 		{xtype: 'noteNavigationView'}
 	    ]
 	});
