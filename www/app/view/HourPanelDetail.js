@@ -1,13 +1,16 @@
 /*
  * HourPanelDetail.js
- * (c) 2013 ]project-open[
- * Please see www.hour-open.org/en/project_open_license for details
  *
+ * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
+ * This file may be used under the terms of the GNU General Public 
+ * License version 3.0 or alternatively unter the terms of the ]po[ 
+ * FL or CL license as specified in www.project-open.org/en/license.
+ */
+
+/**
  * Form for editing/creating an im_hour object.
  * The form consists of a number of fields and the logic for
  * creating/updating/deleting.
- *
- * The form is created by the 
  */
 Ext.define('PO.view.HourPanelDetail', {
     extend: 'Ext.form.Panel',

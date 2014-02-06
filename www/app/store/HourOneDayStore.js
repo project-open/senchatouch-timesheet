@@ -1,14 +1,18 @@
 /*
  * HourOneDayStore.js
- * Copyright 2013 ]project-open[
- * Author: Frank Bergmann (frank.bergmann@project-open.com)
- * License: http://www.project-open.org/en/license
  *
+ * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
+ * This file may be used under the terms of the GNU General Public 
+ * License version 3.0 or alternatively unter the terms of the ]po[ 
+ * FL or CL license as specified in www.project-open.org/en/license.
+ */
+
+/**
  * Stores the hours logged by the current user.
  * The store is designed to be scripted and filtered
  * by a controller.
  * 
-*/
+ */
 Ext.define('PO.store.HourOneDayStore', {
     extend: 'Ext.data.Store',
     storeId: 'hourOneDayStore',

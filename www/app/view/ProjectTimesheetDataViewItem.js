@@ -1,10 +1,12 @@
 /*
- * For documentation please see:
- * http://www.sencha.com/blog/dive-into-dataview-with-sencha-touch-2-beta-2/
- * For an example please see:
- * https://github.com/senchalabs/component-dataview-example/blob/master/app/view/KittensListItem.js
+ * ProjectTimesheetDataViewItem.js
+ *
+ * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
+ * This file may be used under the terms of the GNU General Public 
+ * License version 3.0 or alternatively unter the terms of the ]po[ 
+ * FL or CL license as specified in www.project-open.org/en/license.
+ *
  */
-
 Ext.define('PO.view.ProjectTimesheetDataViewItem', {
     extend: 'Ext.dataview.component.DataItem',
     xtype : 'projectTimesheetDataViewItem',
