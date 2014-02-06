@@ -1,5 +1,14 @@
+/*
+ * Hours.js
+ * (c) 2013 ]project-open[
+ * Please see www.project-open.org/en/project_open_license for details
+ *
+ * Model with fields for im_hour ]po[ business object.
+ */
+
 Ext.define('PO.model.Hour', {
     extend: 'Ext.data.Model',
+//    xtype: 'hour',
     config: {
 	fields: [
 	    'id',					// Same as hour_id
@@ -21,18 +30,20 @@ Ext.define('PO.model.Hour', {
 
 	    {   name: 'date',
                 convert: function(value, record) {
-                    return record.get('day').substring(0,10);
+		    var day = record.get('day');
+		    if (day != null) {
+			return day.substring(0,10);
+		    } else {
+			return null;
+		    }
                 }
             }
-
-
 	],
 	proxy: {
 	    type:		'rest',
 	    url:		'/intranet-rest/im_hour',
 	    appendId:		true,			// Append the object_id: ../im_ticket/<object_id>
 	    timeout:		300000,
-	    
 	    extraParams: {
 		format:		'json'			// Tell the ]po[ REST to return JSON data.
 	    },

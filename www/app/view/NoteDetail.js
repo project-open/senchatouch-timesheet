@@ -1,3 +1,12 @@
+/*
+ * NoteDetailsPanel.js
+ * (c) 2014 ]project-open[
+ * Please see www.hour-open.org/en/project_open_license for details
+ *
+ * Form for editing/creating a note. 
+ * The form consists of a number of fields and the logic for
+ * creating/updating/deleting a note.
+ */
 Ext.define('PO.view.NoteDetail', {
     extend: 'Ext.form.Panel',
     xtype: 'noteDetail',

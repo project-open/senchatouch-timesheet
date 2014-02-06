@@ -14,20 +14,15 @@ Ext.define('PO.store.HourOneProjectStore', {
     config: {
 	model: 'PO.model.Hour',
 	autoLoad: false,
-
 	sorters: [{
             property: 'date',
             direction: 'ASC'
         }],
-
         grouper: {
             groupFn: function(record) {
                 return record.get('date');
             }
         },
-
-
-	// Proxy specifically for this store
 	proxy: {
 	    type: 'rest',
 	    url: '/intranet-rest/im_hour',

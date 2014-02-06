@@ -7,7 +7,6 @@
 Ext.define('PO.view.ProjectMainListNavigationView', {
     extend: 'Ext.navigation.View',
     xtype: 'projectMainListNavigationView',
-
     requires: [
 	'PO.view.HourList',
 	'PO.view.HourPanelDetail',
@@ -15,14 +14,11 @@ Ext.define('PO.view.ProjectMainListNavigationView', {
 	'PO.view.ProjectTaskList',
 	'PO.view.ProjectPanelDetail',
 	'PO.view.ProjectPanelTimesheet',
-
 	'PO.store.HourOneProjectStore'
     ],
-
     config: {
 	title: 'Main Projects',
 	iconCls: 'star',
-
         navigationBar: {
             ui: 'sencha',
             items: [{
@@ -30,7 +26,7 @@ Ext.define('PO.view.ProjectMainListNavigationView', {
                 id: 'logButton',
                 text: 'Log Hours',
                 align: 'right',
-                hidden: false,
+                hidden: true,
                 hideAnimation: Ext.os.is.Android ? false : {
                     type: 'fadeOut',
                     duration: 200
@@ -41,7 +37,6 @@ Ext.define('PO.view.ProjectMainListNavigationView', {
                 }
             }]
         },
-	
 	items: [{
 	    xtype: 'projectMainList'
 	}]

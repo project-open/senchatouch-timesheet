@@ -1,3 +1,10 @@
+/*
+ * HourList.js
+ * (c) 2013 ]project-open[
+ * Please see www.project-open.org/en/project_open_license for details
+ *
+ * List of Hours logged on a specific task.
+ */
 Ext.define('PO.view.HourList', {
     extend: 'Ext.List',
     xtype: 'hourList',

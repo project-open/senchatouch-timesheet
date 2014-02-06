@@ -1,3 +1,16 @@
+/**
+ * A list of all active main projects for the user.
+ * There may still be an issue with permissions and
+ * the ]po[ configuration parameters:
+ * <ul>
+ * <li>TimesheetLogHoursOnPotentialProjectsP: Should the user log on potential projects?
+ * <li>TimesheetTaskVisibilityScope: On which tasks should a user be able to log?
+ * <li>TimesheetMaxHoursPerDay: Max hours per day
+ * <li>PermissiveHourLogging: "permissive" means that we allow Employees to log their hours 
+ *     basically on every project in the system. "restrictive" means that users can only log 
+ *     to projects (and the project's Tasks) if they are a member of the project. 
+ * </ul>
+ */
 Ext.define('PO.view.ProjectMainList', {
 	extend: 'Ext.List',
 	xtype: 'projectMainList',
@@ -12,42 +25,8 @@ Ext.define('PO.view.ProjectMainList', {
 	    grouped: true,
 	    indexBar: true,
 	    onItemDisclosure: true,
-
-
-//	    itemTpl: '<div class="contact2">{project_name_indented}</div>',
-//	    itemTpl: '<div style="font-size: medium">{project_name_indented}</div>',
-
             itemTpl: '<div class="myContent">'+
                 '<div><b>{project_name}</b></div>' +
-//                '<br><div>{project_status} {project_type}</div>' +
                 '</div>'
-
-/*
-            itemTpl: '<div class="myButton">' +
-                '<input type="button" name="{project_id}" value="Hours" ' +
-                'style="padding:1px;">' +
-                '</div><div class="myContent">'+
-                '<div><b>{project_name}</b></div>' +
-                '<div>{project_status} {project_type}</div>' +
-                '</div>',
-*/
-/*
-
-	    itemTpl: new Ext.XTemplate(
-		'<div class="myButton"><input type="button" name="{project_id}" value="',
-		'<tpl if="hours_per_user &gt; 0">',
-		'{hours_per_user}',
-		'<tpl else>',
-		'Hours',
-		'</tpl>',
-		'" style="padding:1px;">' +
-		'</div><div class="myContent">'+
-		'<div><b>{project_name}</b></div>' +
-		'<div>{project_status} {project_type} {project_manager_name}</b></div>' +
-		'</div>'
-	    ),
-*/
-
 	}
 });
-

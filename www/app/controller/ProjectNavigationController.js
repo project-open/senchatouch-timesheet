@@ -1,3 +1,9 @@
+/**
+ * ProjectNavigationController.js
+ * (c) 2014 ]project-open[
+ * Please see www.project-open.com/en/license for details
+ *
+ */
 Ext.define('PO.controller.ProjectNavigationController', {
     extend: 'Ext.app.Controller',
     xtype: 'projectNavigationController',
@@ -5,7 +11,6 @@ Ext.define('PO.controller.ProjectNavigationController', {
 	refs: {
 	    projectNavigationView: 'projectNavigationView'
 	},
-
 	control: {
             'button[text=Log]': {
                 tap: 'showProjectTimesheetPanel'
@@ -14,7 +19,6 @@ Ext.define('PO.controller.ProjectNavigationController', {
                 tap: 'showProjectDetailPanel'
             }
 	}
-
     },
     
     // Show the details of the project: Create a new instance of the 
@@ -31,9 +35,7 @@ Ext.define('PO.controller.ProjectNavigationController', {
     // projectTimesheet page and push on the top of the stack
     showProjectTimesheetPanel: function(list, index, listItem, record, touchEvent) { 
 	var record = this.getRecord();
-
 	var view = this.getProjectNavigationView();
-
 	var store = Ext.data.StoreManager.lookup('HourOneProjectStore');
 	var proxy = store.getProxy();
 	proxy.setExtraParam('format', 'json');
