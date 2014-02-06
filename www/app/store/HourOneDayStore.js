@@ -27,7 +27,7 @@ Ext.define('PO.store.HourOneDayStore', {
 	    extraParams: {
 		format: 'json',
 		day: Ext.Date.format(new Date(), 'Y-m-d'),	// to be overwritten by controller
-		user_id: 624			                // to be overwritten by controller
+		user_id: current_user_id	                // to be overwritten by controller
 	    },
 	    reader: {
 		type: 'json', 

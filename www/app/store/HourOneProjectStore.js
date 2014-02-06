@@ -32,8 +32,8 @@ Ext.define('PO.store.HourOneProjectStore', {
 	    appendId: true,
 	    extraParams: {
 		format: 'json',
-		user_id: '624',
-		project_id: '15751'
+		user_id: '0',           // to be specified when loading
+		project_id: '0'         // to be specified when loading
 	    },
 	    reader: {
 		type: 'json', 

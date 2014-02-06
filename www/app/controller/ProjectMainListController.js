@@ -120,7 +120,6 @@ Ext.define('PO.controller.ProjectMainListController', {
 	    // Load the right data into the store
 	    var project_id = record.get('project_id');
 	    var project_name = record.get('project_name');
-	    var user_id = '624';
 
 	    // Load the hours logged by the user on the task. There can be
 	    // (theoretically) more than one im_hour object, therefore the store.
@@ -128,7 +127,7 @@ Ext.define('PO.controller.ProjectMainListController', {
 	    store.load({
 		params : {
 		    'project_id': project_id,
-		    'user_id': user_id,
+		    'user_id': current_user_id,
 		    'day': "'" + Ext.Date.format(new Date(), 'Y-m-d') + "'"
 		},
 		scope: this,
@@ -147,7 +146,7 @@ Ext.define('PO.controller.ProjectMainListController', {
 		    } else {
 			// No entry - create new hours record with some default values
 			hourRecord = Ext.create('PO.model.Hour', {
-			    'user_id': user_id,
+			    'user_id': current_user_id,
 			    'project_id': project_id,
 			    'day':  Ext.Date.format(new Date(), 'Y-m-d'),
 			    'hours': '0',
