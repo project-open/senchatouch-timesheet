@@ -14,7 +14,8 @@ SELECT im_report_new (
 	'intranet-rest',						-- package_key
 	110,								-- report_sort_order
 	(select menu_id from im_menus where label = 'reporting-rest'),	-- parent_menu_id
-'select	child.project_id,
+'select	child.project_id as id,
+	child.project_id,
 	child.parent_id,
 	tree_level(child.tree_sortkey)-1 as level,
 	child.tree_sortkey,
