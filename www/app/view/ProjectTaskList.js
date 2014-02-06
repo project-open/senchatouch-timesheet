@@ -22,12 +22,12 @@ Ext.define('PO.view.ProjectTaskList', {
 	    iconCls: 'star',	    
 	    itemTpl: new Ext.XTemplate(
 		'<div class="myButton"><input type="button" name="{project_id}" value="',
-		    '<tpl if="hours_for_user &gt; 0">',
-		        '{hours_for_user}',
+		    '<tpl if="hours_for_user_date &gt; 0">',
+		        '{hours_for_user_date}',
 		    '<tpl else>',
 		        'Log Hours',
 		    '</tpl>',
-		    '" style="padding:1px;">' +
+		    '" style="padding:1px; width:100px;">' +
 		'</div>' +
 		'<div class="myContent">'+
 		'<div><b><nobr>{indent}{project_name}</nobr></b>' +

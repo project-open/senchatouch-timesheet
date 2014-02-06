@@ -53,7 +53,7 @@ Ext.define('PO.controller.ProjectMainListController', {
 
 	var store = Ext.data.StoreManager.lookup('HourOneProjectStore');
 	var project_id = 0
-	var today = '2013-08-09';
+	var today = Ext.Date.format(new Date(), 'Y-m-d');
 	store.load({
 	    params : {
 		'main_project_id': project_id,
@@ -89,15 +89,13 @@ Ext.define('PO.controller.ProjectMainListController', {
 	
 	// Load the right data into the store
 	var store = Ext.data.StoreManager.lookup('ProjectTaskStore');
-	var project_id = record.get('project_id');
-	var today = '2013-08-09';
 	store.load({
 	    params : {
-		'main_project_id': project_id,
-		'date': today
+		'main_project_id': record.get('project_id'),
+		'date': Ext.Date.format(new Date(), 'Y-m-d')
 	    }
 	});
-	
+ 	
 	// Push an HourList to the NavigationView page
 	taskList.setStore(store);
 	var list = navView.push(taskList);
@@ -116,45 +114,55 @@ Ext.define('PO.controller.ProjectMainListController', {
      */
     onItemTapTaskList: function(view, index, target, record, event) {
 	console.log('Item was tapped on the TaskList');
-	console.log(view, index, target, record, event);
+
 	if(event.target.type == "button"){
 
 	    // Load the right data into the store
-	    var store = Ext.data.StoreManager.lookup('HourOneProjectStore');
 	    var project_id = record.get('project_id');
 	    var project_name = record.get('project_name');
-	    var today = '2013-08-09';
 	    var user_id = '624';
+
+	    // Load the hours logged by the user on the task. There can be
+	    // (theoretically) more than one im_hour object, therefore the store.
+	    var store = Ext.data.StoreManager.lookup('HourOneProjectStore');
 	    store.load({
 		params : {
 		    'project_id': project_id,
 		    'user_id': user_id,
-		    'day': "'" + today + "'"
+		    'day': "'" + Ext.Date.format(new Date(), 'Y-m-d') + "'"
+		},
+		scope: this,
+		callback: function(records, operation, success) {
+		    console.log("onItemTapTaskList: loaded store: "+success);
+		    if (!success) {
+			Ext.Msg.alert('Failed', operation.request.scope.reader.jsonData["message"]);
+			return;
+		    }
+		    var store = Ext.data.StoreManager.lookup('HourOneProjectStore');
+		    var count = store.getCount();
+		    var hourRecord = null;
+		    if (count > 0) {
+			// We found at least one entry
+			hourRecord = store.getAt(0);  // just take the first one
+		    } else {
+			// No entry - create new hours record with some default values
+			hourRecord = Ext.create('PO.model.Hour', {
+			    'user_id': user_id,
+			    'project_id': project_id,
+			    'day':  Ext.Date.format(new Date(), 'Y-m-d'),
+			    'hours': '0',
+			    'note': ''
+			});
+		    }
+		    
+		    // Push the new im_hour page to the top of the view
+		    var navView = this.getProjectMainListNavigationView();
+		    navView.push({
+			xtype: 'hourPanelDetail',
+			title: project_name,
+			record: hourRecord
+		    });
 		}
-	    });
-
-	    var hourRecord = null;
-	    var count = store.getCount();
-	    if (count > 0) {
-		// We found at least one entry
-		hourRecord = store.getAt(0);  // just take the first one
-	    } else {
-		// No entry - create new hours record with some default values
-		hourRecord = Ext.create('PO.model.Hour', {
-		    'user_id': user_id,
-		    'project_id': project_id,
-		    'day': today,
-		    'hours': '0',
-		    'note': ''
-		});
-	    }
-	    
-	    // Push the new im_hour page to the top of the view
-	    var navView = this.getProjectMainListNavigationView();
-	    navView.push({
-		xtype: 'hourPanelDetail',
-		title: project_name,
-		record: hourRecord
 	    });
 
 
@@ -162,7 +170,7 @@ Ext.define('PO.controller.ProjectMainListController', {
 /*	    var hourList = Ext.create("PO.view.HourList");
 	    var store = Ext.data.StoreManager.lookup('HourOneProjectStore');
 	    var project_id = record.get('project_id');
-	    var today = '2013-08-09';
+	    var today = Ext.Date.format(new Date(), 'Y-m-d');
 	    store.load({
 		params : {
 		    'project_id': project_id

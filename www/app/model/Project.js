@@ -44,12 +44,13 @@ Ext.define('PO.model.Project', {
 	    'company_name',		// denormalized company_id
 	    'project_lead_name',	// Project manager
 
-//	    ------------		// Special fields only used by certain quieres. ToDo: Different model?
+//	    ------------		// These fields are not part of the ]po[ data-model
 	    'hours_total',		// may not be set depending on query
 	    'hours_for_user',		// may not be set depending on query
 	    'hours_for_user_date',	// may not be set depending on query
 
-	    {   name: 'indent',		// A &nbsp; sequence representing the project indentation
+	    {   
+		name: 'indent',		// A &nbsp; sequence representing the project indentation
                 convert: function(value, record) {
                     var level = record.get('level');
 		    var result = '';
@@ -57,10 +58,22 @@ Ext.define('PO.model.Project', {
 			result = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result;
 			level = level - 1;
 		    }
-
                     return result;
                 }
-            }
+            }, {   
+		// required by selectfield drop-down fields in forms
+		name: 'text',
+		convert: function(value, record) {
+                    var result = record.get('project_name');
+                    return result;		    
+		}
+            }, {   
+		// required by selectfield drop-down fields in forms
+		name: 'value',
+		convert: function(value, record) {
+		    return record.get('project_id');
+		}
+	    }
 	],
 	proxy: {
 	    type:		'rest',

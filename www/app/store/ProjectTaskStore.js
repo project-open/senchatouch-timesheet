@@ -8,7 +8,8 @@
  */
 
 /**
- *
+ * Returns a list of tasks for a specific "main_project" (top-level
+ * project), plus the sum of hours logged by a user total and today.
  */
 Ext.define('PO.store.ProjectTaskStore', {
     extend: 'Ext.data.Store',
@@ -17,12 +18,10 @@ Ext.define('PO.store.ProjectTaskStore', {
 	model: 'PO.model.Project',
 	autoLoad: true,
 	pageSize: 10000,
-	
 	sorters: [{
 	    property: 'tree_sortkey',
 	    direction: 'ASC'
 	}],
-
 	proxy: {
 	    type: 'rest',
             url: '/intranet-reporting/view',
@@ -31,7 +30,7 @@ Ext.define('PO.store.ProjectTaskStore', {
                 format: 'json',
 		report_code: 'rest_main_project_tasks_with_hours',
 		main_project_id: 0,
-		date: '2000-01-01'
+		date: Ext.Date.format(new Date(), 'Y-m-d')
             },
             reader: {
 		type: 'json', 
