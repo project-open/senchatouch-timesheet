@@ -104,6 +104,7 @@ Ext.define('PO.controller.ProjectMainListController', {
     // Tap on MainList
     // Show more information about the object
     onItemTapMainList: function(view, index, target, record, event) {
+	this.onDiscloseMainList(null, record);
     },
 
 
