@@ -150,7 +150,7 @@ Ext.define('PO.controller.ProjectMainListController', {
 			    'user_id': current_user_id,
 			    'project_id': project_id,
 			    'day':  Ext.Date.format(new Date(), 'Y-m-d'),
-			    'hours': '0',
+			    'hours': '',
 			    'note': ''
 			});
 		    }

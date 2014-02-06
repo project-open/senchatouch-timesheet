@@ -25,9 +25,9 @@ Ext.define('PO.view.ProjectTaskList', {
 		    '<tpl if="hours_for_user_date &gt; 0">',
 		        '{hours_for_user_date}',
 		    '<tpl else>',
-		        'Log Hours',
+		        'Log',
 		    '</tpl>',
-		    '" style="padding:1px; width:100px;">' +
+		    '" style="padding:1px; width:70px;">' +
 		'</div>' +
 		'<div class="myContent">'+
 		'<div><b><nobr>{indent}{project_name}</nobr></b>' +

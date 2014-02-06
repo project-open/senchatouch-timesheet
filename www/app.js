@@ -46,7 +46,7 @@ Ext.application({
     // Main function: Load the various panels
     launch: function() {
 	Ext.create("Ext.tab.Panel", {
-	    fullscreen: true,
+	    fullscreen: false,
 	    tabBarPosition: 'bottom',
 	    items: [
 		// The application consists of two three only:
