@@ -1,5 +1,5 @@
 /*
- * ProjectMainStore.js
+ * TimesheetMainProjectStore
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -12,9 +12,9 @@
  * with the number of total hours logged by the current user, and
  * the hours for a specific day.
  */
-Ext.define('PO.store.ProjectMainStore', {
+Ext.define('PO.store.TimesheetMainProjectStore', {
     extend: 'Ext.data.Store',
-    storeId: 'projectMainStore',
+    storeId: 'timesheetMainProjectStore',
     config: {
 	model: 'PO.model.Project',
 	autoLoad: true,

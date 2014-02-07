@@ -15,7 +15,6 @@
 Ext.define('PO.view.TimesheetHourForm', {
     extend: 'Ext.form.Panel',
     xtype: 'timesheetHourForm',
-    requires: ['PO.store.HourOneProjectStore'],
     config: {
         title: 'Hour Details',
         layout: 'vbox',
@@ -35,7 +34,7 @@ Ext.define('PO.view.TimesheetHourForm', {
                         xtype: 'selectfield',
                         name: 'project_id',
                         label: 'Project',
-                        store: 'ProjectTaskStore'	// recycle the store of the TimesheetTaskList
+                        store: 'TimesheetTaskStore'	// recycle the store of the TimesheetTaskList
                     }, {
                         xtype: 'hiddenfield',
                         name: 'id'
@@ -83,9 +82,9 @@ Ext.define('PO.view.TimesheetHourForm', {
 		    });
 
 		    // Update the logged hours in the TaskListStore 
-		    var projectTaskStore = Ext.data.StoreManager.lookup('ProjectTaskStore');
+		    var timesheetTaskStore = Ext.data.StoreManager.lookup('TimesheetTaskStore');
 		    var taskId = rec.get('project_id');
-		    var taskModel = projectTaskStore.getById(taskId);
+		    var taskModel = timesheetTaskStore.getById(taskId);
 		    taskModel.set('hours_for_user_date', rec.get('hours'));
 
 		    // Return to the list of hours page
@@ -103,10 +102,10 @@ Ext.define('PO.view.TimesheetHourForm', {
 		    var form = button.up('formpanel');
 		    var rec = form.getRecord();		    // Get the Hour model
 		    
-		    // Reset the logged hours in the ProjectTaskStore
-		    var projectTaskStore = Ext.data.StoreManager.lookup('ProjectTaskStore');
+		    // Reset the logged hours in the TimesheetTaskStore
+		    var timesheetTaskStore = Ext.data.StoreManager.lookup('TimesheetTaskStore');
 		    var taskId = rec.get('project_id');
-		    var taskModel = projectTaskStore.getById(taskId);
+		    var taskModel = timesheetTaskStore.getById(taskId);
 		    taskModel.set('hours_for_user_date', 0);
 
 		    rec.erase();                // Generates DELETE call to REST backend

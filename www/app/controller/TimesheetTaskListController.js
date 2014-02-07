@@ -79,14 +79,14 @@ Ext.define('PO.controller.TimesheetTaskListController', {
 
 	// Load the hours logged by the user on the task. There can be
 	// (theoretically) more than one im_hour object, therefore the store.
-	var store = Ext.data.StoreManager.lookup('HourOneProjectStore');
+	var store = Ext.data.StoreManager.lookup('HourStore');
 	store.load({
 	    params : {
 		'project_id': task_id,
 		'user_id': current_user_id,
 		'day': "'" + Ext.Date.format(today, 'Y-m-d') + "'"
 	    },
-	    scope: this,
+	    scope: this,					// this is the controller...
 	    callback: function(records, operation, success) {
 		console.log("onItemTapTaskList: loaded store: "+success);
 		if (!success) { 
@@ -94,7 +94,7 @@ Ext.define('PO.controller.TimesheetTaskListController', {
 		    return Ext.Msg.alert('Failed', msg); 
 		}
 
-		var store = Ext.data.StoreManager.lookup('HourOneProjectStore');
+		var store = Ext.data.StoreManager.lookup('HourStore');
 		var count = store.getCount();
 		var hourRecord = null;
 		if (count > 0) {				// We found at least one entry

@@ -1,5 +1,5 @@
 /*
- * HourOneProjectStore.js
+ * HourStore.js
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -8,12 +8,14 @@
  */
 
 /*
- * Stores the hours logged by the current user on a specific task or project.
+ * General/temporary store for hours retreived from the server.
+ * Used by TimesheetTaskListController to retreive single hours
+ * per task, user and day.
  * The store is designed to be scripted and filtered by a controller. 
  */
-Ext.define('PO.store.HourOneProjectStore', {
+Ext.define('PO.store.HourStore', {
     extend: 'Ext.data.Store',
-    storeId: 'hourOneProjectStore',
+    storeId: 'hourStore',
     config: {
 	model: 'PO.model.Hour',
 	autoLoad: false,

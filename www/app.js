@@ -15,23 +15,21 @@ Ext.application({
 	'Project'				// Project or task
     ],
     stores: [
+	// Master Date Stores
 	'ProjectStatusStore',			// List of project states
 	'ProjectTypeStore',			// List of project types
+	'HourStore',				// Generic store of hours retreived
 	'NoteStore',				// List of global notes
-	'HourOneDayStore',			// List of hours per project, day or user (depending on use)
-	'HourOneProjectStore',			// List of hours per project, day or user (depending on use)
-	'ProjectMainStore',			// List of main projects projects
-	'ProjectTaskStore',			// List of main projects projects
-	'ProjectTimesheetStore'			// List of projects whith hierarchical indent.
-						// Includes only projects with permissions for the current user to log hours
+	'TimesheetMainProjectStore',		// List of main projects projects
+	'TimesheetTaskStore'			// List of tasks of a single main project
     ],
     views: [
 	'SplashPage',				// Initial screen with ]po[ logo
 	'NoteForm',				// Note edite/create form
 	'NoteNavigationView',			// Container for navigation between NoteList and NoteForm
-	'ProjectNavigationView',		// Container for navigation between ProjectList and ProjectTimesheet
 	'TimesheetMainProjectList',
 	'TimesheetMainProjectListNavigationView',	// Navigation container for Timesheet sub-application
+	'TimesheetTaskList',			// Edit/Create page for hours
 	'TimesheetHourForm',			// Edit/Create page for hours
 	'TimesheetDateSelectForm'		// Small panel showing the current date to log hours
     ],

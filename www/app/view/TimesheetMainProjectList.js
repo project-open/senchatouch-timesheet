@@ -24,11 +24,10 @@
 Ext.define('PO.view.TimesheetMainProjectList', {
     extend: 'Ext.List',
     xtype: 'timesheetMainProjectList',
-    requires: ['PO.store.ProjectMainStore'],
-    
+    requires: ['PO.store.TimesheetMainProjectStore'],
     config: {
 	title: 'Main Projects',
-	store: 'ProjectMainStore',
+	store: 'TimesheetMainProjectStore',
 	iconCls: 'star',
 	disclosure: true,
 	sorted: true,

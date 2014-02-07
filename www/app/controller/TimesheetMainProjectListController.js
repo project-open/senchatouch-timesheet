@@ -52,7 +52,7 @@ Ext.define('PO.controller.TimesheetMainProjectListController', {
 	});
 	
 	// Load the right data into the store
-	var store = Ext.data.StoreManager.lookup('ProjectTaskStore');
+	var store = Ext.data.StoreManager.lookup('TimesheetTaskStore');
 	var today = this.getTimesheetDatePicker().getValue();
 	
 	store.load({
