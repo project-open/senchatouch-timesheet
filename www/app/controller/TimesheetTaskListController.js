@@ -1,5 +1,5 @@
 /*
- * ProjectTaskListController.js
+ * TimesheetTaskListController.js
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -10,20 +10,20 @@
 /**
  * Controller 
  */
-Ext.define('PO.controller.ProjectTaskListController', {
+Ext.define('PO.controller.TimesheetTaskListController', {
     extend: 'Ext.app.Controller',
-    xtype: 'projectTaskListController',
+    xtype: 'timesheetTaskListController',
     config: {
 	profile: Ext.os.deviceType.toLowerCase(),
 	refs: {
 	    // The main navigation for push/pop
 	    timesheetMainProjectListNavigationView: 'timesheetMainProjectListNavigationView',
 	    // The main object - the list of tasks per project
-	    projectTaskList: 'projectTaskList',
+	    timesheetTaskList: 'timesheetTaskList',
 	    timesheetDatePicker: '#timesheetDatePicker'
 	},
 	control: {
-	    'projectTaskList': {
+	    'timesheetTaskList': {
 		itemtap: 'onItemTapTaskList',		// Tapped on the task list
 		activate: 'onActivateTaskList'
 	    }
@@ -31,7 +31,7 @@ Ext.define('PO.controller.ProjectTaskListController', {
     },
     
     onActivateTaskList: function() {
-	console.log('ProjectTaskList container is active');
+	console.log('TimesheetTaskList container is active');
     },
 
     /**
@@ -40,7 +40,7 @@ Ext.define('PO.controller.ProjectTaskListController', {
      * and show the HourDetailPage vs. the TaskDetailPage.
      */
     onItemTapTaskList: function(view, index, target, record, event) {
-	console.log('ProjectTaskListController: Tapped on task');
+	console.log('TimesheetTaskListController: Tapped on task');
 	if(event.target.type == "button"){
 	    // Tapped on the button
 	    this.onLogHours(view, index, target, record, event);
@@ -55,7 +55,7 @@ Ext.define('PO.controller.ProjectTaskListController', {
      * Push a panel to show the details of the task.
      */
     onShowTaskDetails: function(view, index, target, record, event) {
-	console.log('ProjectTaskListController: Tapped on task name');
+	console.log('TimesheetTaskListController: Tapped on task name');
 	var view = this.getTimesheetMainProjectListNavigationView();
 	view.push({
 	    xtype: 'projectPanelDetail',
@@ -64,13 +64,13 @@ Ext.define('PO.controller.ProjectTaskListController', {
     },
 
     /**
-     * Tapped on the "Log" button on the ProjectTaskList.
+     * Tapped on the "Log" button on the TimesheetTaskList.
      * Push the HourForm and fill with appropriate data.
      * The ProjecTaskList store consists of "timesheet task"
      * objects which are sub-types of "project".
      */
     onLogHours: function(view, index, target, record, event) {
-	console.log('ProjectTaskListController: Tapped on Log button');
+	console.log('TimesheetTaskListController: Tapped on Log button');
 
 	// Get the name and ID of the task tapped
 	var task_id = record.get('project_id');

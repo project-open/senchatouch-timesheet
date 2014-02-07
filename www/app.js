@@ -37,8 +37,8 @@ Ext.application({
     ],
     controllers: [
 	'NoteNavigationController',
-	'TimesheetMainProjectListController',
-	'ProjectTaskListController'
+	'TimesheetMainProjectListController',	// Timesheet: Controller for 1st level (main projects)
+	'TimesheetTaskListController'		// Timesheet: Controller for 2nd level (tasks)
     ],
 
     viewport: {

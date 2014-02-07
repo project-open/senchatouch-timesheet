@@ -13,10 +13,6 @@
 Ext.define('PO.view.TimesheetMainProjectListNavigationView', {
     extend: 'Ext.navigation.View',
     xtype: 'timesheetMainProjectListNavigationView',
-    requires: [
-	'PO.view.ProjectTaskList',
-	'PO.store.HourOneProjectStore'
-    ],
     config: {
 	title: 'Timesheet',
 	iconCls: 'time',

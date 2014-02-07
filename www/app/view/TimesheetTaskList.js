@@ -1,5 +1,5 @@
 /*
- * ProjectTaskList.js 
+ * TimesheetTaskList.js 
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -11,9 +11,9 @@
 /**
  * Shows a list of tasks plus their logged hours.
  */
-Ext.define('PO.view.ProjectTaskList', {
+Ext.define('PO.view.TimesheetTaskList', {
 	extend: 'Ext.List',
-	xtype: 'projectTaskList',
+	xtype: 'timesheetTaskList',
 	requires: ['PO.store.ProjectTaskStore'],
 
 	config: {
