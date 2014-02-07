@@ -51,8 +51,8 @@ Ext.application({
 	    tabBarPosition: 'bottom',
 	    items: [
 		// The application consists of two three only:
-		{xtype: 'timesheetMainProjectListNavigationView'},
 		{xtype: 'splashPage'}, 
+		{xtype: 'timesheetMainProjectListNavigationView'},
 		{xtype: 'noteNavigationView'}
 	    ]
 	});

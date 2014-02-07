@@ -46,7 +46,8 @@ Ext.define('PO.view.TaskForm', {
 			value: 0		// Magic value: 0 is the ID of the "guest" object
 		    }
 		]
-            }, {
+            }
+/*	    , {
 		xtype: 'button',
 		text: 'Save',
 		ui: 'confirm',
@@ -76,6 +77,7 @@ Ext.define('PO.view.TaskForm', {
 		    navView.pop();
 		}
             }
+*/
         ]
     }
 });
