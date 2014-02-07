@@ -52,8 +52,8 @@ Ext.application({
 	    items: [
 		// The application consists of two three only:
 		{xtype: 'splashPage'}, 
-		{xtype: 'timesheetMainProjectListNavigationView'},
-		{xtype: 'noteNavigationView'}
+		{xtype: 'timesheetMainProjectListNavigationView'}
+		// {xtype: 'noteNavigationView'}
 	    ]
 	});
     }
