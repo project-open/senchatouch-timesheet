@@ -24,13 +24,13 @@ Ext.application({
 	'TimesheetTaskStore'			// List of tasks of a single main project
     ],
     views: [
+	'HourForm',				// Edit/Create page for hours
 	'SplashPage',				// Initial screen with ]po[ logo
 	'NoteForm',				// Note edite/create form
 	'NoteNavigationView',			// Container for navigation between NoteList and NoteForm
 	'TimesheetMainProjectList',
 	'TimesheetMainProjectListNavigationView',	// Navigation container for Timesheet sub-application
 	'TimesheetTaskList',			// Edit/Create page for hours
-	'TimesheetHourForm',			// Edit/Create page for hours
 	'TimesheetDateSelectForm'		// Small panel showing the current date to log hours
     ],
     controllers: [
