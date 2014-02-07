@@ -28,6 +28,7 @@ Ext.application({
 	'SplashPage',				// Initial screen with ]po[ logo
 	'NoteForm',				// Note edite/create form
 	'NoteNavigationView',			// Container for navigation between NoteList and NoteForm
+	'TaskForm',				// Note edite/create form
 	'TimesheetMainProjectList',
 	'TimesheetMainProjectListNavigationView',	// Navigation container for Timesheet sub-application
 	'TimesheetTaskList',			// Edit/Create page for hours

@@ -89,7 +89,16 @@ Ext.define('PO.view.HourForm', {
 
 		    // Return to the list of hours page
 		    var projView = button.up('timesheetMainProjectListNavigationView');
-		    projView.pop();
+		    projView.pop('timesheetTaskList');	
+		    
+/*
+		    Ext.Function.defer(function(){
+			var projView = button.up('timesheetMainProjectListNavigationView');
+			projView.pop(1, false);	
+		    }, 100);
+*/
+
+
                 }
             }, {
                 xtype: 'button',

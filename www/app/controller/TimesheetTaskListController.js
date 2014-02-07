@@ -24,14 +24,26 @@ Ext.define('PO.controller.TimesheetTaskListController', {
 	},
 	control: {
 	    'timesheetTaskList': {
-		itemtap: 'onItemTapTaskList',		// Tapped on the task list
-		activate: 'onActivateTaskList'
+		itemtap: 'onItemTap',		// Tapped on the task list
+		activate: 'onActivate'
 	    }
 	}
     },
     
-    onActivateTaskList: function() {
-	console.log('TimesheetTaskList container is active');
+    onActivate: function() {
+	console.log('TimesheetTaskListController: onActivate');
+
+	// Destroy doesn't seem to work for the HourForm,
+	// or it's simply not possible to pop() an item from within the item.
+	var navView = this.getTimesheetMainProjectListNavigationView();
+	var items = navView.getInnerItems();
+	if (items.length >= 3) {
+	    navView.pop();
+	    // Remove one item from the stack of the navigation bar.
+	    // Otherwise the Back button will appear even in the last page
+	    navView.getNavigationBar().backButtonStack.pop();
+	}
+
     },
 
     /**
@@ -39,14 +51,14 @@ Ext.define('PO.controller.TimesheetTaskListController', {
      * Differentiate between tapping on the button vs. on the main text
      * and show the HourDetailPage vs. the TaskDetailPage.
      */
-    onItemTapTaskList: function(view, index, target, record, event) {
-	console.log('TimesheetTaskListController: Tapped on task');
+    onItemTap: function(view, index, target, record, event) {
+	console.log('TimesheetTaskListController: onItemTap: Tapped on task item (button or task name)');
 	if(event.target.type == "button"){
 	    // Tapped on the button
-	    this.onLogHours(view, index, target, record, event);
+	    this.onItemTapLogHours(view, index, target, record, event);
 	} else {
 	    // Tapped on the task
-	    this.onShowTaskDetails(view, index, target, record, event);
+	    this.onItemTapShowTaskDetails(view, index, target, record, event);
 	}
     },
 
@@ -54,11 +66,11 @@ Ext.define('PO.controller.TimesheetTaskListController', {
      * Tapped on the name of the task.
      * Push a panel to show the details of the task.
      */
-    onShowTaskDetails: function(view, index, target, record, event) {
-	console.log('TimesheetTaskListController: Tapped on task name');
+    onItemTapShowTaskDetails: function(view, index, target, record, event) {
+	console.log('TimesheetTaskListController: onItemTapShowTaskDetails: Tapped on task name');
 	var view = this.getTimesheetMainProjectListNavigationView();
 	view.push({
-	    xtype: 'projectPanelDetail',
+	    xtype: 'taskForm',
 	    record: record
 	});
     },
@@ -69,8 +81,8 @@ Ext.define('PO.controller.TimesheetTaskListController', {
      * The ProjecTaskList store consists of "timesheet task"
      * objects which are sub-types of "project".
      */
-    onLogHours: function(view, index, target, record, event) {
-	console.log('TimesheetTaskListController: Tapped on Log button');
+    onItemTapLogHours: function(view, index, target, record, event) {
+	console.log('TimesheetTaskListController: onItemTapLogHours: Tapped on Log button');
 
 	// Get the name and ID of the task tapped
 	var task_id = record.get('project_id');
@@ -88,7 +100,6 @@ Ext.define('PO.controller.TimesheetTaskListController', {
 	    },
 	    scope: this,					// this is the controller...
 	    callback: function(records, operation, success) {
-		console.log("onItemTapTaskList: loaded store: "+success);
 		if (!success) { 
 		    var msg = operation.getError();
 		    return Ext.Msg.alert('Failed', msg); 
