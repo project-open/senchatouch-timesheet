@@ -100,6 +100,17 @@ Ext.define('PO.view.HourPanelDetail', {
                 handler: function(button, event) {
                     console.log('HourPanelDetail: "Delete"');
 
+		    var form = button.up('formpanel');
+		    var rec = form.getRecord();		    // Get the Hour model
+		    
+		    // Reset the logged hours in the ProjectTaskStore
+		    var projectTaskStore = Ext.data.StoreManager.lookup('ProjectTaskStore');
+		    var taskId = rec.get('project_id');
+		    var taskModel = projectTaskStore.getById(taskId);
+		    taskModel.set('hours_for_user_date', 0);
+
+		    rec.erase();                // Generates DELETE call to REST backend
+		    
 		    // Return to the list of hours page
 		    var projView = button.up('projectMainListNavigationView');
 		    projView.pop();

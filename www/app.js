@@ -36,7 +36,8 @@ Ext.application({
     ],
     controllers: [
 	'NoteNavigationController',
-	'ProjectMainListController'
+	'ProjectMainListController',
+	'ProjectTaskListController'
     ],
 
     viewport: {
