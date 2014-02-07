@@ -17,7 +17,7 @@ Ext.define('PO.controller.ProjectTaskListController', {
 	profile: Ext.os.deviceType.toLowerCase(),
 	refs: {
 	    // The main navigation for push/pop
-	    projectMainListNavigationView: 'projectMainListNavigationView',
+	    timesheetMainProjectListNavigationView: 'timesheetMainProjectListNavigationView',
 	    // The main object - the list of tasks per project
 	    projectTaskList: 'projectTaskList',
 	    timesheetDatePicker: '#timesheetDatePicker'
@@ -56,7 +56,7 @@ Ext.define('PO.controller.ProjectTaskListController', {
      */
     onShowTaskDetails: function(view, index, target, record, event) {
 	console.log('ProjectTaskListController: Tapped on task name');
-	var view = this.getProjectMainListNavigationView();
+	var view = this.getTimesheetMainProjectListNavigationView();
 	view.push({
 	    xtype: 'projectPanelDetail',
 	    record: record
@@ -114,7 +114,7 @@ Ext.define('PO.controller.ProjectTaskListController', {
 		}
 		
 		// Push the new im_hour page to the top of the view
-		var navView = this.getProjectMainListNavigationView();
+		var navView = this.getTimesheetMainProjectListNavigationView();
 		navView.push({
 		    xtype: 'hourPanelDetail',
 		    title: task_name,

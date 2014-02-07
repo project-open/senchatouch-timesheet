@@ -29,7 +29,8 @@ Ext.application({
 	'SplashPage',				// Initial screen with ]po[ logo
 	'NoteNavigationView',			// Container for navigation between NoteList and NoteDetail
 	'ProjectNavigationView',		// Container for navigation between ProjectList and ProjectTimesheet
-	'ProjectMainListNavigationView',	// Navigation container for Timesheet sub-application
+	'TimesheetMainProjectList',
+	'TimesheetMainProjectListNavigationView',	// Navigation container for Timesheet sub-application
 	'HourList',				// Not used anymore(?)
 	'HourPanelDetail',			// Wrong name! Entry form for hours
 	'HourDetailListContainer',		// Not used anymore(?)
@@ -37,7 +38,7 @@ Ext.application({
     ],
     controllers: [
 	'NoteNavigationController',
-	'ProjectMainListController',
+	'TimesheetMainProjectListController',
 	'ProjectTaskListController'
     ],
 
@@ -52,7 +53,7 @@ Ext.application({
 	    tabBarPosition: 'bottom',
 	    items: [
 		// The application consists of two three only:
-		{xtype: 'projectMainListNavigationView'},
+		{xtype: 'timesheetMainProjectListNavigationView'},
 		{xtype: 'splashPage'}, 
 		{xtype: 'noteNavigationView'}
 	    ]

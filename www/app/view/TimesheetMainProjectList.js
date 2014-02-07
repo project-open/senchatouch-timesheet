@@ -1,5 +1,5 @@
 /*
- * ProjectMainList.js
+ * TimesheetMainProjectList.js
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -21,9 +21,9 @@
  *     to projects (and the project's Tasks) if they are a member of the project. 
  * </ul>
  */
-Ext.define('PO.view.ProjectMainList', {
+Ext.define('PO.view.TimesheetMainProjectList', {
     extend: 'Ext.List',
-    xtype: 'projectMainList',
+    xtype: 'timesheetMainProjectList',
     requires: ['PO.store.ProjectMainStore'],
     
     config: {

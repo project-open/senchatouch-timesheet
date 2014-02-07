@@ -1,5 +1,5 @@
 /*
- * ProjectMainListNavigationView.js
+ * TimesheetMainProjectListNavigationView.js
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -10,13 +10,12 @@
 /**
  * Top of the timesheet sub-application
  */
-Ext.define('PO.view.ProjectMainListNavigationView', {
+Ext.define('PO.view.TimesheetMainProjectListNavigationView', {
     extend: 'Ext.navigation.View',
-    xtype: 'projectMainListNavigationView',
+    xtype: 'timesheetMainProjectListNavigationView',
     requires: [
 	'PO.view.HourList',
 	'PO.view.HourPanelDetail',
-	'PO.view.ProjectMainList',
 	'PO.view.ProjectTaskList',
 	'PO.view.ProjectPanelDetail',
 	'PO.view.ProjectPanelTimesheet',
@@ -26,7 +25,7 @@ Ext.define('PO.view.ProjectMainListNavigationView', {
 	title: 'Timesheet',
 	iconCls: 'time',
 	items: [
-	    { xtype: 'projectMainList' }
+	    { xtype: 'timesheetMainProjectList' }
 	]
     }
 });

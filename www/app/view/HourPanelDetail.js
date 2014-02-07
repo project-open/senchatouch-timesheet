@@ -89,7 +89,7 @@ Ext.define('PO.view.HourPanelDetail', {
 		    taskModel.set('hours_for_user_date', rec.get('hours'));
 
 		    // Return to the list of hours page
-		    var projView = button.up('projectMainListNavigationView');
+		    var projView = button.up('timesheetMainProjectListNavigationView');
 		    projView.pop();
                 }
             }, {
@@ -112,7 +112,7 @@ Ext.define('PO.view.HourPanelDetail', {
 		    rec.erase();                // Generates DELETE call to REST backend
 		    
 		    // Return to the list of hours page
-		    var projView = button.up('projectMainListNavigationView');
+		    var projView = button.up('timesheetMainProjectListNavigationView');
 		    projView.pop();
                 }
             }

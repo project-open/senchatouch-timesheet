@@ -1,5 +1,5 @@
 /*
- * ProjectMainListController.js
+ * TimesheetMainProjectListController.js
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -12,18 +12,18 @@
  * Tapping: Shows project details
  * Disclose: Shows the list of tasks for hour logging
  */
-Ext.define('PO.controller.ProjectMainListController', {
+Ext.define('PO.controller.TimesheetMainProjectListController', {
     extend: 'Ext.app.Controller',
-    xtype: 'projectMainListController',
+    xtype: 'timesheetMainProjectListController',
     config: {
 	profile: Ext.os.deviceType.toLowerCase(),
 	refs: {
-	    projectMainListNavigationView: 'projectMainListNavigationView',
-	    projectMainList: 'projectMainList',
+	    timesheetMainProjectListNavigationView: 'timesheetMainProjectListNavigationView',
+	    timesheetMainProjectList: 'timesheetMainProjectList',
 	    timesheetDatePicker: '#timesheetDatePicker'
 	},
 	control: {
-	    'projectMainList': {
+	    'timesheetMainProjectList': {
 		activate: 'onActivate',
 		itemtap: 'onItemTap',
 		disclose: 'onDisclose',
@@ -32,7 +32,7 @@ Ext.define('PO.controller.ProjectMainListController', {
     },
     
     onActivate: function() {
-	console.log('ProjectMainList container is active');
+	console.log('TimesheetMainProjectList container is active');
     },
 
     // Tap on MainList - same as Disclose at the moment
@@ -41,12 +41,12 @@ Ext.define('PO.controller.ProjectMainListController', {
     },
  
     /**
-     * Pressed the -> button on the ProjectMainList-
+     * Pressed the -> button on the TimesheetMainProjectList-
      * Show the ProjectTaskList with the specified project.
      */
     onDisclose: function(list, record) {
 	// Create an HourList to the NavigationView page
-	var navView = this.getProjectMainListNavigationView();
+	var navView = this.getTimesheetMainProjectListNavigationView();
 	var project_name = record.get('project_name');
 	var taskList = Ext.create("PO.view.ProjectTaskList", {
 	    title: project_name + ' Tasks and Hours'
