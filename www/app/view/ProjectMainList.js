@@ -22,21 +22,44 @@
  * </ul>
  */
 Ext.define('PO.view.ProjectMainList', {
-	extend: 'Ext.List',
-	xtype: 'projectMainList',
-	requires: ['PO.store.ProjectMainStore'],
+    extend: 'Ext.List',
+    xtype: 'projectMainList',
+    requires: ['PO.store.ProjectMainStore'],
+    
+    config: {
+	title: 'Main Projects',
+	store: 'ProjectMainStore',
+	iconCls: 'star',
+	disclosure: true,
+	sorted: true,
+	grouped: true,
+	indexBar: true,
+	onItemDisclosure: true,
+        itemTpl: '<div class="myContent">'+
+            '<div><b>{project_name}</b></div>' +
+            '</div>',
 
-	config: {
-	    title: 'Main Projects',
-	    store: 'ProjectMainStore',
-	    iconCls: 'star',
-	    disclosure: true,
-	    sorted: true,
-	    grouped: true,
-	    indexBar: true,
-	    onItemDisclosure: true,
-            itemTpl: '<div class="myContent">'+
-                '<div><b>{project_name}</b></div>' +
-                '</div>'
-	}
+	// Show a date-picker at the bottom to select the day for logging
+	items: [
+	    {
+		xtype: 'toolbar',
+                docked: 'bottom',
+		layout: {
+		    pack: 'center',
+		    type: 'hbox'
+		},
+                items: [
+		    {
+                        xtype: 'datepickerfield',
+			id: 'timesheetDatePicker',
+                        name: 'date',
+                        label: 'Date',
+                        value: new Date(),
+			dateFormat: 'Y-m-d',
+                        picker: { yearFrom: 2014 }
+                    }
+                ]
+	    }
+	]
+    }
 });

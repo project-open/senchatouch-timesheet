@@ -29,8 +29,8 @@ Ext.define('PO.store.ProjectTaskStore', {
             extraParams: {
                 format: 'json',
 		report_code: 'rest_main_project_tasks_with_hours',
-		main_project_id: 0,
-		date: Ext.Date.format(new Date(), 'Y-m-d')
+		main_project_id: 0,				// overwritten when loading
+		date: Ext.Date.format(new Date(), 'Y-m-d')	// overwritten when loading
             },
             reader: {
 		type: 'json', 

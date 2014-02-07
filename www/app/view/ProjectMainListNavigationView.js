@@ -8,7 +8,7 @@
  */
 
 /**
- *
+ * Top of the timesheet sub-application
  */
 Ext.define('PO.view.ProjectMainListNavigationView', {
     extend: 'Ext.navigation.View',
@@ -23,28 +23,10 @@ Ext.define('PO.view.ProjectMainListNavigationView', {
 	'PO.store.HourOneProjectStore'
     ],
     config: {
-	title: 'Main Projects',
-	iconCls: 'star',
-        navigationBar: {
-            ui: 'sencha',
-            items: [{
-                xtype: 'button',
-                id: 'logButton',
-                text: 'Log Hours',
-                align: 'right',
-                hidden: true,
-                hideAnimation: Ext.os.is.Android ? false : {
-                    type: 'fadeOut',
-                    duration: 200
-                },
-                showAnimation: Ext.os.is.Android ? false : {
-                    type: 'fadeIn',
-                    duration: 200
-                }
-            }]
-        },
-	items: [{
-	    xtype: 'projectMainList'
-	}]
+	title: 'Timesheet',
+	iconCls: 'time',
+	items: [
+	    { xtype: 'projectMainList' }
+	]
     }
 });

@@ -29,10 +29,11 @@ Ext.application({
 	'SplashPage',				// Initial screen with ]po[ logo
 	'NoteNavigationView',			// Container for navigation between NoteList and NoteDetail
 	'ProjectNavigationView',		// Container for navigation between ProjectList and ProjectTimesheet
-	'ProjectMainListNavigationView',
-	'HourList',
-	'HourPanelDetail',
-	'HourDetailListContainer'
+	'ProjectMainListNavigationView',	// Navigation container for Timesheet sub-application
+	'HourList',				// Not used anymore(?)
+	'HourPanelDetail',			// Wrong name! Entry form for hours
+	'HourDetailListContainer',		// Not used anymore(?)
+	'TimesheetDateSelectForm'		// Small panel showing the current date to log hours
     ],
     controllers: [
 	'NoteNavigationController',

@@ -19,7 +19,8 @@ Ext.define('PO.controller.ProjectMainListController', {
 	profile: Ext.os.deviceType.toLowerCase(),
 	refs: {
 	    projectMainListNavigationView: 'projectMainListNavigationView',
-	    projectMainList: 'projectMainList'
+	    projectMainList: 'projectMainList',
+	    timesheetDatePicker: '#timesheetDatePicker'
 	},
 	control: {
 	    'projectMainList': {
@@ -53,10 +54,12 @@ Ext.define('PO.controller.ProjectMainListController', {
 	
 	// Load the right data into the store
 	var store = Ext.data.StoreManager.lookup('ProjectTaskStore');
+	var today = this.getTimesheetDatePicker().getValue();
+	
 	store.load({
 	    params : {
 		'main_project_id': record.get('project_id'),
-		'date': Ext.Date.format(new Date(), 'Y-m-d')
+		'date': Ext.Date.format(today, 'Y-m-d')
 	    }
 	});
  	

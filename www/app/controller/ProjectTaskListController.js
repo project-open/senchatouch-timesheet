@@ -19,7 +19,8 @@ Ext.define('PO.controller.ProjectTaskListController', {
 	    // The main navigation for push/pop
 	    projectMainListNavigationView: 'projectMainListNavigationView',
 	    // The main object - the list of tasks per project
-	    projectTaskList: 'projectTaskList'
+	    projectTaskList: 'projectTaskList',
+	    timesheetDatePicker: '#timesheetDatePicker'
 	},
 	control: {
 	    'projectTaskList': {
@@ -74,6 +75,7 @@ Ext.define('PO.controller.ProjectTaskListController', {
 	// Get the name and ID of the task tapped
 	var task_id = record.get('project_id');
 	var task_name = record.get('project_name');
+	var today = this.getTimesheetDatePicker().getValue();
 
 	// Load the hours logged by the user on the task. There can be
 	// (theoretically) more than one im_hour object, therefore the store.
@@ -82,7 +84,7 @@ Ext.define('PO.controller.ProjectTaskListController', {
 	    params : {
 		'project_id': task_id,
 		'user_id': current_user_id,
-		'day': "'" + Ext.Date.format(new Date(), 'Y-m-d') + "'"
+		'day': "'" + Ext.Date.format(today, 'Y-m-d') + "'"
 	    },
 	    scope: this,
 	    callback: function(records, operation, success) {
@@ -104,8 +106,8 @@ Ext.define('PO.controller.ProjectTaskListController', {
 		    hourRecord = Ext.create('PO.model.Hour', {
 			'user_id': current_user_id,
 			'project_id': task_id,
-			'day':  Ext.Date.format(new Date(), 'Y-m-d'),
-			'day_date': new Date(),
+			'day':  Ext.Date.format(today, 'Y-m-d'),
+			'day_date': today,
 			'hours': '',
 			'note': ''
 		    });
