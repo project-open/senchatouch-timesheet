@@ -1,5 +1,5 @@
 /*
- * ProjectTaskStore.js
+ * TimesheetTaskStore.js
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -11,9 +11,9 @@
  * Returns a list of tasks for a specific "main_project" (top-level
  * project), plus the sum of hours logged by a user total and today.
  */
-Ext.define('PO.store.ProjectTaskStore', {
+Ext.define('PO.store.TimesheetTaskStore', {
     extend: 'Ext.data.Store',
-    storeId: 'projectTaskStore',
+    storeId: 'timesheetTaskStore',
     config: {
 	model: 'PO.model.Project',
 	autoLoad: true,

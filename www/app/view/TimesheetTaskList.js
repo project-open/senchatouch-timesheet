@@ -14,11 +14,11 @@
 Ext.define('PO.view.TimesheetTaskList', {
 	extend: 'Ext.List',
 	xtype: 'timesheetTaskList',
-	requires: ['PO.store.ProjectTaskStore'],
+	requires: ['PO.store.TimesheetTaskStore'],
 
 	config: {
 	    title: 'Task Projects',
-	    store: 'ProjectTaskStore',
+	    store: 'TimesheetTaskStore',
 	    iconCls: 'star',	    
 	    itemTpl: new Ext.XTemplate(
 		'<div class="myButton"><input type="button" name="{project_id}" value="',
@@ -41,9 +41,3 @@ Ext.define('PO.view.TimesheetTaskList', {
 	    onItemDisclosure: false
 	}
 });
-
-
-
-//		'<div>{project_status} {project_type} ({project_lead_name})</b></div>' +
-//	    itemTpl: '<div class="myContent">Project Name: <b>{project_name}</b></div>',
-//	    itemTpl: '<div class="myContent"><table><tr><td>Project Name</td><td><b>{project_name}</b></td></tr></table></div>',
