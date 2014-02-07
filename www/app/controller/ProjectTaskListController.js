@@ -116,7 +116,7 @@ Ext.define('PO.controller.ProjectTaskListController', {
 		// Push the new im_hour page to the top of the view
 		var navView = this.getTimesheetMainProjectListNavigationView();
 		navView.push({
-		    xtype: 'hourPanelDetail',
+		    xtype: 'timesheetHourForm',
 		    title: task_name,
 		    record: hourRecord
 		});

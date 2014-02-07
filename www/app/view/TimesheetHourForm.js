@@ -1,5 +1,5 @@
 /*
- * HourPanelDetail.js
+ * TimesheetHourForm.js
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -12,12 +12,12 @@
  * The form consists of a number of fields and the logic for
  * creating/updating/deleting.
  */
-Ext.define('PO.view.HourPanelDetail', {
+Ext.define('PO.view.TimesheetHourForm', {
     extend: 'Ext.form.Panel',
-    xtype: 'hourPanelDetail',
+    xtype: 'timesheetHourForm',
     requires: ['PO.store.HourOneProjectStore'],
     config: {
-        title: 'Hour Detail',
+        title: 'Hour Details',
         layout: 'vbox',
         items: [
             {
@@ -58,7 +58,7 @@ Ext.define('PO.view.HourPanelDetail', {
                 ui: 'confirm',
                 itemID: 'hourSaveButton',
                 handler: function(button, event) {
-                    console.log('HourPanelDetail: "Save"');
+                    console.log('TimesheetHourForm: "Save"');
 
 		    var form = button.up('formpanel');
 		    var rec = form.getRecord();		    // Get the Hour model
@@ -98,7 +98,7 @@ Ext.define('PO.view.HourPanelDetail', {
                 ui: 'decline',
                 itemID: 'hourDeleteButton',
                 handler: function(button, event) {
-                    console.log('HourPanelDetail: "Delete"');
+                    console.log('TimesheetHourForm: "Delete"');
 
 		    var form = button.up('formpanel');
 		    var rec = form.getRecord();		    // Get the Hour model

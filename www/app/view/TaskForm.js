@@ -1,5 +1,5 @@
 /*
- * ProjectPanelTimesheet.js
+ * TaskForm.js
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -11,11 +11,11 @@
  * Timesheet entry page for a single task, sub-project or main project.
  * Allows the user to log a single timesheet entry.
  */
-Ext.define('PO.view.ProjectPanelTimesheet', {
+Ext.define('PO.view.TaskForm', {
     extend: 'Ext.form.Panel',
-    xtype: 'projectPanelTimesheet',
+    xtype: 'taskForm',
     config: {
-        title: 'Project Timesheet',
+        title: 'Task Form',
         layout: 'vbox',
         items: [
 	    {
@@ -51,10 +51,9 @@ Ext.define('PO.view.ProjectPanelTimesheet', {
 		text: 'Save',
 		ui: 'confirm',
 		handler: function() {
-		    console.log('ProjectPanelTimesheet: Button "Save" pressed:');
+		    console.log('TaskForm: Button "Save" pressed:');
 		    
 		    // Save the form values to the record.
-		    // The record was set by the ProjectNavigationController
 		    var form = this.up('formpanel');
 		    var values = form.getValues();
 		    var rec = form.getRecord();

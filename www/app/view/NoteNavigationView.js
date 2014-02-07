@@ -14,8 +14,7 @@ Ext.define('PO.view.NoteNavigationView', {
     extend: 'Ext.navigation.View',
     xtype: 'noteNavigationView',
     requires: [
-	'PO.view.NoteList',
-	'PO.view.NoteDetail'
+	'PO.view.NoteList'
     ],
     config: {
 	title: 'Notes',

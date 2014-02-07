@@ -34,7 +34,7 @@ Ext.define('PO.controller.NoteNavigationController', {
 	    handler: function() {
 		console.log('NoteListController: New Note button pressed');
 		navView.push({
-		    xtype: 'noteDetail',
+		    xtype: 'noteForm',
 		    title: 'New Note'
 		});
 	    }
@@ -42,12 +42,12 @@ Ext.define('PO.controller.NoteNavigationController', {
     },
 
     // "Disclose" Event - somebody pressed on the -> button at the list
-    // Create a new instance of the noteDetail page and push on the top
+    // Create a new instance of the noteForm page and push on the top
     // of the stack
     onNoteListDisclose: function(list, record) { 
 	var navigationView = this.getNoteNavigationView();
 	navigationView.push({
-	    xtype: 'noteDetail',
+	    xtype: 'noteForm',
 	    record: record
 	});
     }

@@ -45,7 +45,6 @@ Ext.define('PO.controller.TimesheetMainProjectListController', {
      * Show the ProjectTaskList with the specified project.
      */
     onDisclose: function(list, record) {
-	// Create an HourList to the NavigationView page
 	var navView = this.getTimesheetMainProjectListNavigationView();
 	var project_name = record.get('project_name');
 	var taskList = Ext.create("PO.view.ProjectTaskList", {
@@ -63,7 +62,7 @@ Ext.define('PO.controller.TimesheetMainProjectListController', {
 	    }
 	});
  	
-	// Push an HourList to the NavigationView page
+	// Push the task list 
 	taskList.setStore(store);
 	var list = navView.push(taskList);
     }

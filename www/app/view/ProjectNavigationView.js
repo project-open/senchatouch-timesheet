@@ -14,9 +14,7 @@ Ext.define('PO.view.ProjectNavigationView', {
     extend: 'Ext.navigation.View',
     xtype: 'projectNavigationView',
     requires: [
-	'PO.view.ProjectTimesheetDataView',
-	'PO.view.ProjectPanelDetail',
-	'PO.view.ProjectPanelTimesheet'
+	'PO.view.ProjectTimesheetDataView'
     ],
     config: {
 	title: 'Projects',

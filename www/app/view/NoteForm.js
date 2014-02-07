@@ -1,5 +1,5 @@
 /*
- * NoteDetail.js
+ * NoteForm.js
  *
  * Copyright (c) 2011 - 2014 ]project-open[ Business Solutions, S.L.
  * This file may be used under the terms of the GNU General Public 
@@ -12,9 +12,9 @@
  * The form consists of a number of fields and the logic for
  * creating/updating/deleting a note.
  */
-Ext.define('PO.view.NoteDetail', {
+Ext.define('PO.view.NoteForm', {
     extend: 'Ext.form.Panel',
-    xtype: 'noteDetail',
+    xtype: 'noteForm',
     config: {
         title: 'Note Detail',
         layout: 'vbox',

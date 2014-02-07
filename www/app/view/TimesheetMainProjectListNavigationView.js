@@ -14,11 +14,7 @@ Ext.define('PO.view.TimesheetMainProjectListNavigationView', {
     extend: 'Ext.navigation.View',
     xtype: 'timesheetMainProjectListNavigationView',
     requires: [
-	'PO.view.HourList',
-	'PO.view.HourPanelDetail',
 	'PO.view.ProjectTaskList',
-	'PO.view.ProjectPanelDetail',
-	'PO.view.ProjectPanelTimesheet',
 	'PO.store.HourOneProjectStore'
     ],
     config: {
