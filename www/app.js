@@ -46,12 +46,12 @@ Ext.application({
     // Main function: Load the various panels
     launch: function() {
 	Ext.create("Ext.tab.Panel", {
-	    fullscreen: false,
+	    fullscreen: true,
 	    tabBarPosition: 'bottom',
 	    items: [
 		// The application consists of two three only:
-		{xtype: 'splashPage'}, 
 		{xtype: 'projectMainListNavigationView'},
+		{xtype: 'splashPage'}, 
 		{xtype: 'noteNavigationView'}
 	    ]
 	});

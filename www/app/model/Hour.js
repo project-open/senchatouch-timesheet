@@ -31,16 +31,9 @@ Ext.define('PO.model.Hour', {
 	    'material_id',				// Type of service provided during hours (rarely used)
 	    'days',    					// Hours converted into days for daily invoicing (rarely used)
 
-	    {   name: 'date',
-                convert: function(value, record) {
-		    var day = record.get('day');
-		    if (day != null) {
-			return day.substring(0,10);
-		    } else {
-			return null;
-		    }
-                }
-            }
+//          ----------------                            // Special fields that are not part of the ]po[ data-model
+	    'day_date'                                  // Used temporarily when entering hours for date conversion
+
 	],
 	proxy: {
 	    type:		'rest',
@@ -62,3 +55,16 @@ Ext.define('PO.model.Hour', {
     } 
 });
 
+
+
+
+
+/*	    {                                           // Not sure where this is used
+		name: 'date',
+                convert: function(value, record) {
+		    var day = record.get('day');
+		    if (!day) { return null; }
+		    return day.substring(0,10);
+                }
+            }
+*/

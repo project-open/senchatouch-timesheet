@@ -35,8 +35,7 @@ Ext.define('PO.view.HourPanelDetail', {
                         xtype: 'selectfield',
                         name: 'project_id',
                         label: 'Project',
-			// recycle the store of the ProjectTaskList
-                        store: 'ProjectTaskStore'
+                        store: 'ProjectTaskStore'	// recycle the store of the ProjectTaskList
                     }, {
                         xtype: 'hiddenfield',
                         name: 'id'
@@ -44,8 +43,13 @@ Ext.define('PO.view.HourPanelDetail', {
                         xtype: 'hiddenfield',
                         name: 'user_id'
                     }, {
-                        xtype: 'hiddenfield',
-                        name: 'day'
+                        xtype: 'hiddenfield',		// This is the main data field as string
+                        name: 'day'			// in YYYY-MM-DD string(!) format
+                    }, {
+                        xtype: 'datepickerfield',	// DatePicker requires a date format.
+                        name: 'day_date',		// We convert to day before and after edit.
+			label: 'Date',
+			dateFormat: 'Y-m-d'
                     }
                 ]
             }, {
@@ -67,6 +71,7 @@ Ext.define('PO.view.HourPanelDetail', {
 		    // Save the form avalues into the model
 		    var values = form.getValues();
 		    rec.set(values);
+		    rec.set('day', Ext.Date.format(values.day_date, 'Y-m-d'));
 
 		    rec.save({                              // Save the model - generates PUT or POST to REST backend
 			success: function(record, operation) {

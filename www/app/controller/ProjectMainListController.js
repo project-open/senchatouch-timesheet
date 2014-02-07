@@ -144,12 +144,15 @@ Ext.define('PO.controller.ProjectMainListController', {
 		    if (count > 0) {
 			// We found at least one entry
 			hourRecord = store.getAt(0);  // just take the first one
+			var dayString = hourRecord.get('day');
+			hourRecord.set('day_date', new Date(dayString)); // Form datepicker needs date
 		    } else {
 			// No entry - create new hours record with some default values
 			hourRecord = Ext.create('PO.model.Hour', {
 			    'user_id': current_user_id,
 			    'project_id': project_id,
 			    'day':  Ext.Date.format(new Date(), 'Y-m-d'),
+			    'day_date': new Date(),
 			    'hours': '',
 			    'note': ''
 			});
