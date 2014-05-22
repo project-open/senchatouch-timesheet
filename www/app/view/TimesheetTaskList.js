@@ -34,10 +34,13 @@ Ext.define('PO.view.TimesheetTaskList', {
 		'</div>'
 	    ),
 
+	    inline: { wrap: false },
+	    // scrollable: { direction: 'both', directionLock: true },
+	    scrollable: 'both',
+
 	    disclosure: true,
 	    grouped: false,
-	    indexBar: true,
-	    scrollable: 'both',
+	    indexBar: false,
 	    onItemDisclosure: false
 	}
 });

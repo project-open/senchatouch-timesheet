@@ -33,7 +33,7 @@ Ext.define('PO.view.HourForm', {
                     }, {
                         xtype: 'selectfield',
                         name: 'project_id',
-                        label: 'Project',
+                        label: 'Task',
                         store: 'TimesheetTaskStore'	// recycle the store of the TimesheetTaskList
                     }, {
                         xtype: 'hiddenfield',

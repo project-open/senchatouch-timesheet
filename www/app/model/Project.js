@@ -55,7 +55,7 @@ Ext.define('PO.model.Project', {
                     var level = record.get('level');
 		    var result = '';
 		    while (level > 0) {
-			result = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + result;
+			result = '&nbsp;&nbsp;&nbsp;' + result;
 			level = level - 1;
 		    }
                     return result;

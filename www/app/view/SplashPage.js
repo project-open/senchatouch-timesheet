@@ -25,7 +25,6 @@ Ext.define('PO.view.SplashPage', {
 			'<br>&nbsp;<br>',
 			'<h1>]po[ Sencha Touch Timesheet</h1>',
 			'<br>&nbsp;<br>',
-			'<p>This demo shows how to list hierarchical projects and to log hours into a ]po[ backend.',
 			'</center>',
 		].join("")
 	}
