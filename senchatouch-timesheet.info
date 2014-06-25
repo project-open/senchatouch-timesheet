@@ -17,7 +17,8 @@
         <description format="text/plain">Allows to log hours on a list of frequently used projects.</description>
         <maturity>0</maturity>
 
-        <provides url="senchatouch-timesheet" version="0.1d"/>
+        <provides url="senchatouch-timesheet" version="4.1.0.0.0"/>
+        <requires url="sencha-touch" version="4.1.0.0.0"/>
 
         <callbacks>
         </callbacks>
