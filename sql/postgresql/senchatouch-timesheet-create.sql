@@ -11,7 +11,7 @@
 SELECT im_report_new (
 	'REST Main Project Tasks with Hours',				-- report_name
 	'rest_main_project_tasks_with_hours',				-- report_code
-	'intranet-rest',						-- package_key
+	'senchatouch-timesheet',					-- package_key
 	110,								-- report_sort_order
 	(select menu_id from im_menus where label = 'reporting-rest'),	-- parent_menu_id
 'select	child.project_id as id,
@@ -80,7 +80,7 @@ SELECT acs_permission__grant_permission(
 SELECT im_report_new (
 	'REST Main Projects with Hours',				-- report_name
 	'rest_main_projects_with_hours',				-- report_code
-	'intranet-rest',						-- package_key
+	'senchatouch-timesheet',					-- package_key
 	110,								-- report_sort_order
 	(select menu_id from im_menus where label = 'reporting-rest'),	-- parent_menu_id
 'select	project_id,
