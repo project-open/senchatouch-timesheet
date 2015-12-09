@@ -49,11 +49,12 @@ Ext.application({
 	Ext.create("Ext.tab.Panel", {
 	    fullscreen: true,
 	    tabBarPosition: 'bottom',
+	    xtype: 'tabPanel',
 	    items: [
 		// The application consists of two three only:
 		{xtype: 'splashPage'}, 
-		{xtype: 'timesheetMainProjectListNavigationView'}
-		// {xtype: 'noteNavigationView'}
+		{xtype: 'timesheetMainProjectListNavigationView'},
+		{xtype: 'noteNavigationView'}
 	    ]
 	});
     }

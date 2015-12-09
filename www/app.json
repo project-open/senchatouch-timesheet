@@ -10,7 +10,7 @@
     "name": "List",
     "js": [
         {
-            "path": "/senchatouch-v211/sencha-touch-all-debug.js"
+            "path": "/senchatouch-v242/sencha-touch-all-debug.js"
         },
         {
             "path": "app.js",
@@ -19,7 +19,7 @@
     ],
     "css": [
         {
-            "path": "/senchatouch-v211/resources/css/sencha-touch.css",
+            "path": "/senchatouch-v242/resources/css/sencha-touch.css",
             "update": "delta"
         },
         {

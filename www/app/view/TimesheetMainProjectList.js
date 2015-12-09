@@ -55,7 +55,7 @@ Ext.define('PO.view.TimesheetMainProjectList', {
                         label: 'Date',
                         value: new Date(),
 			dateFormat: 'Y-m-d',
-                        picker: { yearFrom: 2014 }
+                        picker: { yearFrom: 2015 }
                     }
                 ]
 	    }
