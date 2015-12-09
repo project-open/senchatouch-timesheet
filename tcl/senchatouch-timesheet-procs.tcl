@@ -17,7 +17,8 @@ ad_proc -public senchatouch_timesheet_home_component {} {
     <p>
     <a href='/senchatouch-timesheet/'>\]po\[ Mobile Timesheet</a> 
     is a timesheet logging application for mobile devices
-    written in HTML5 and available as part of every \]po\[ server.
+    (Android, iPhone, iPad...) written in HTML5 and available as 
+    part of every \]po\[ server.
     We have included this application in 
     <nobr>\]project-open\[</nobr> V5.0 as a preview in order to 
     show you what is possible, while the mobile app may not yet be
