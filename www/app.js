@@ -15,7 +15,6 @@ Ext.application({
 	'Project'				// Project or task
     ],
     stores: [
-	// Master Date Stores
 	'ProjectStatusStore',			// List of project states
 	'ProjectTypeStore',			// List of project types
 	'HourStore',				// Generic store of hours retreived
@@ -41,7 +40,7 @@ Ext.application({
     ],
 
     viewport: {
-	autoMaximize: false
+	autoMaximize: false			// set to false for iOS 9
     },
 
     // Main function: Load the various panels
@@ -51,7 +50,7 @@ Ext.application({
 	    tabBarPosition: 'bottom',
 	    xtype: 'tabPanel',
 	    items: [
-		// The application consists of two three only:
+		// The application consists of three indenpendent sections:
 		{xtype: 'splashPage'}, 
 		{xtype: 'timesheetMainProjectListNavigationView'},
 		{xtype: 'noteNavigationView'}
@@ -59,4 +58,3 @@ Ext.application({
 	});
     }
 });
-

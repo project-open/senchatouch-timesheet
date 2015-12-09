@@ -8,6 +8,37 @@
 -- @author frank.bergmann@project-open.com
 
 
+-----------------------------------------------------------
+-- Component Plugin
+--
+-- Advertizing Portlet in Home page
+
+SELECT im_component_plugin__new (
+	null, 'im_component_plugin', now(), null, null, null,
+	'Mobile Timesheet',		-- plugin_name - shown in menu
+	'senchatouch-timesheet',	-- package_name
+	'left',				-- location
+	'/intranet/index',		-- page_url
+	null,				-- view_name
+	10,				-- sort_order
+	'senchatouch_timesheet_home_component',	-- component_tcl
+	'lang::message::lookup "" "senchatouch-timesheet.Mobile_Timesheet" "Mobile Timesheet"'
+);
+
+SELECT acs_permission__grant_permission(
+	(select	plugin_id 
+	from	im_component_plugins
+	where	plugin_name = 'Mobile Timesheet' and 
+		package_name = 'senchatouch-timesheet'
+	), 
+	(select group_id from groups where group_name = 'Employees'),
+	'read'
+);
+
+
+-----------------------------------------------------------
+-- REST API Reports
+--
 SELECT im_report_new (
 	'REST Main Project Tasks with Hours',				-- report_name
 	'rest_main_project_tasks_with_hours',				-- report_code
