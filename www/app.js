@@ -41,7 +41,7 @@ Ext.application({
     ],
 
     viewport: {
-	autoMaximize: true
+	autoMaximize: false
     },
 
     // Main function: Load the various panels
