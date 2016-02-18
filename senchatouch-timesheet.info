@@ -19,9 +19,9 @@
 
         <provides url="senchatouch-timesheet" version="5.0.0.0.0"/>
         <requires url="senchatouch-v242" version="1.0.0.0.0"/>
-        <requires url="intranet-timesheet2" version="4.1.0.0.0"/>
-        <requires url="intranet-timesheet2-tasks" version="4.1.0.0.0"/>
-        <requires url="intranet-reporting" version="4.1.0.0.0"/>
+        <requires url="intranet-timesheet2" version="4.0.0.0.0"/>
+        <requires url="intranet-timesheet2-tasks" version="4.0.0.0.0"/>
+        <requires url="intranet-reporting" version="4.0.0.0.0"/>
 
         <callbacks>
         </callbacks>
