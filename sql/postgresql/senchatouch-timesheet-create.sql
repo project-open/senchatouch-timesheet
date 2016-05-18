@@ -104,6 +104,53 @@ SELECT acs_permission__grant_permission(
 );
 
 
+update im_reports 
+set report_sql = '
+select	child.project_id as id,
+	child.project_id,
+	child.parent_id,
+	tree_level(child.tree_sortkey)-1 as level,
+	child.tree_sortkey,
+	child.project_name,
+	child.project_nr,
+	child.company_id,
+	acs_object__name(child.company_id) as company_name,
+	child.project_type_id,
+	child.project_status_id,
+	im_category_from_id(child.project_type_id) as project_type,
+	im_category_from_id(child.project_status_id) as project_status,
+	child.project_lead_id,
+	im_name_from_user_id(child.project_lead_id) as project_lead_name,
+	(	select	sum(h.hours)
+		from	im_hours h
+		where	h.project_id = child.project_id
+	) as hours_total,
+	(	select	sum(h.hours)
+		from	im_hours h
+		where	h.user_id = %user_id% and
+			h.project_id = child.project_id
+	) as hours_for_user,
+	(	select	sum(h.hours)
+		from	im_hours h
+		where	h.user_id = %user_id% and
+			h.project_id = child.project_id and
+			h.day::date = ''%date%''::date
+	) as hours_for_user_date
+from
+	im_projects parent,
+	im_projects child
+where
+	child.tree_sortkey between parent.tree_sortkey and tree_right(parent.tree_sortkey) and
+	parent.project_id = %main_project_id% and
+	parent.project_status_id in (select * from im_sub_categories(76) union select * from im_sub_categories(71)) and
+	child.project_status_id not in (select * from im_sub_categories(81))
+order by
+	child.tree_sortkey
+'
+where report_code = 'rest_main_project_tasks_with_hours';
+
+
+
 
 
 
