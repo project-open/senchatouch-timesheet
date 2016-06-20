@@ -10,14 +10,14 @@
     <inherit-templates-p>f</inherit-templates-p>
     <auto-mount>senchatouch-timesheet</auto-mount>
 
-    <version name="5.0.0.0.0" url="http://openacs.org/repository/download/apm/senchatouch-timesheet-5.0.0.0.0.apm">
+    <version name="5.0.1.0.0" url="http://openacs.org/repository/download/apm/senchatouch-timesheet-5.0.1.0.0.apm">
         <owner url="mailto:frank.bergmann@project-open.com">Frank Bergmann</owner>
         <summary>Log hours using your mobile device</summary>
         <vendor url="http://www.project-open.com/">]project-open[</vendor>
         <description format="text/plain">Allows to log hours on a list of frequently used projects.</description>
         <maturity>0</maturity>
 
-        <provides url="senchatouch-timesheet" version="5.0.0.0.0"/>
+        <provides url="senchatouch-timesheet" version="5.0.1.0.0"/>
         <requires url="senchatouch-v242" version="1.0.0.0.0"/>
         <requires url="intranet-timesheet2" version="4.0.0.0.0"/>
         <requires url="intranet-timesheet2-tasks" version="4.0.0.0.0"/>
