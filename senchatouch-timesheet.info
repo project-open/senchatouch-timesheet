@@ -13,6 +13,7 @@
     <version name="5.0.2.0.0" url="http://www.project-open.net/download/apm/senchatouch-timesheet-5.0.2.0.0.apm">
         <owner url="mailto:frank.bergmann@project-open.com">Frank Bergmann</owner>
         <summary>Log hours using your mobile device</summary>
+        <release-date>2016-11-15</release-date>
         <vendor url="http://www.project-open.com/">]project-open[</vendor>
         <description format="text/plain">Allows to log hours on a list of frequently used projects.</description>
         <maturity>0</maturity>
