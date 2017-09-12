@@ -2,6 +2,6 @@
 <message_catalog package_key="senchatouch-timesheet" locale="de_DE" charset="ISO-8859-1">
 
   <msg key="Mobile_Timesheet">Mobile Zeiterfassung</msg>
-  <msg key="REST_Main_Project_Tasks_with_Hours">REST Main Project Tasks with Hours</msg>
-  <msg key="REST_Main_Projects_with_Hours">REST Main Projects with Hours</msg>
+  <msg key="REST_Main_Project_Tasks_with_Hours">REST - Hauptprojekte mit Aufgaben und erfassten Stunden</msg>
+  <msg key="REST_Main_Projects_with_Hours">REST - Hauptprojekte mit Stunden</msg>
 </message_catalog>
