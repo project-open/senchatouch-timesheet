@@ -15,20 +15,18 @@
         <summary>Log hours using your mobile device</summary>
         <release-date>2016-11-15</release-date>
         <vendor url="http://www.project-open.com/">]project-open[</vendor>
+	<license>]project-open[ Free License (FL)</license>
         <description format="text/plain">Allows to log hours on a list of frequently used projects.</description>
         <maturity>0</maturity>
-
         <provides url="senchatouch-timesheet" version="5.0.1.0.0"/>
         <requires url="senchatouch-v242" version="1.0.0.0.0"/>
         <requires url="intranet-timesheet2" version="4.0.0.0.0"/>
         <requires url="intranet-timesheet2-tasks" version="4.0.0.0.0"/>
         <requires url="intranet-reporting" version="4.0.0.0.0"/>
-
         <callbacks>
         </callbacks>
         <parameters>
         <!-- No version parameters -->
         </parameters>
-
     </version>
 </package>
