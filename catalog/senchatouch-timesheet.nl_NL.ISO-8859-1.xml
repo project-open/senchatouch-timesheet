@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="senchatouch-timesheet" locale="nl_NL" charset="ISO-8859-1">
+
+  <msg key="Mobile_Timesheet">Tijdlijst mobiel</msg>
+  <msg key="REST_Main_Project_Tasks_with_Hours">REST Hoofdproject taken met uren</msg>
+  <msg key="REST_Main_Projects_with_Hours">REST Hoofdproject met uren</msg>
+</message_catalog>
