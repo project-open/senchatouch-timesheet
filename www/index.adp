@@ -17,6 +17,6 @@
 </body>
 </html>
 
-<script>
+<script type="text/javascript" <if @::__csp_nonce@ not nil>nonce="@::__csp_nonce;literal@"</if>>
 var current_user_id = @current_user_id@;
 </script>
