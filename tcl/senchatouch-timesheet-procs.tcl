@@ -41,7 +41,7 @@ ad_proc -public senchatouch_timesheet_home_component {} {
     you with a more mature system in the next release of \]po\[.
     </p><p>
     Please visit our
-    <a href='http://www.project-open.com/en/tutorial-building-sencha-touch-applications'
+    <a href='https://www.project-open.com/en/tutorial-building-sencha-touch-applications'
     target='_blank'>Mobile HTML5 Development Tutorial</a>. 
     You can modify this app by editing the the files here on this server
     in ~projop/packages/senchatouch-timesheet/www/app.js
