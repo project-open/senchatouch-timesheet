@@ -10,7 +10,7 @@
     <inherit-templates-p>f</inherit-templates-p>
     <auto-mount>senchatouch-timesheet</auto-mount>
 
-    <version name="5.1.0.0.0" url="https://www.project-open.net/download/apm/senchatouch-timesheet-5.1.0.0.0.apm">
+    <version name="5.2.0.0.0" url="https://www.project-open.net/download/apm/senchatouch-timesheet-5.2.0.0.0.apm">
         <owner url="mailto:frank.bergmann@project-open.com">Frank Bergmann</owner>
         <summary>Log hours using your mobile device</summary>
         <release-date>2016-11-15</release-date>
